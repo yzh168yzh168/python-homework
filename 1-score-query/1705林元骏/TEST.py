@@ -73,7 +73,7 @@ def main():
     print('\tExcel data Loaded')
     temp='0'
     while temp=='0':
-        print('Input 1 to get score by number\nInput 2 to sort by score')
+        print('Input 1 to get score by number\nInput 2 to sort by score\nInput q to quit')
         temp=input()
         if temp=='1':   #Get Score By Number
             print('Please input number to get score')
@@ -90,14 +90,36 @@ def main():
 
 
         elif temp=='2':
-            temp='2'
+            tmp=1
+            if srtRow==1:
+                while tmp==1:
+                    print('Please enter the column number that you want to sort by. e.g:"3 1" means sort by column 3 and names are in column 1')
+                    temp=input().split(' ',-1)
+                    if (int(temp[0])>srtCol&int(temp[0])<srtRow+readLen&int(temp[0])>1)&(int(temp[1])>=srtCol&int(temp[1])<=srtRow+readLen&int(temp[1])>=1):
+                        tmp=0
+            else:
+                while tmp==1:
+                    print('Please enter the column number that you want to sort by. e.g:"3 1" means sort by column 3 and names are in column 1')
+                    print('Column headers:'+str(table.row_values(srtRow-2)))
+                    temp=input().split(' ',-1)
+                    try:
+                        if (int(temp[0])>srtCol&int(temp[0])<srtRow+readLen&int(temp[0])>1)&(int(temp[1])>=srtCol&int(temp[1])<=srtRow+readLen&int(temp[1])>=1):
+                            tmp=0
+                    except:
+                        tmp=1
+                lie=[0]
+                lie.clear()
+                for i in range(1, table.nrows-srtRow):
+                    lie.append([str(table.cell(i,int(temp[1])-1)),str(table.cell(i,int(temp[0])-1))])
+                lie.sort(key=lambda x:x[1])
+                print(str(lie))
+                break
+
+
+        elif temp.lower()=='q':
+            break
         else:
             temp='0'
-
-
-
-
-
     print('End')
 
 main()
