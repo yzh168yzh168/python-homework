@@ -1,0 +1,18 @@
+a.right{
+	margin-left: 35px;
+	font-size: 20px;
+	text-decoration: underline;
+	padding: 10px;
+}
+.form_in li{
+	float:left;
+	font-size:14px;
+	margin:0 10px 0 0;
+	padding:3px 0 5px;
+	text-align:right;
+	width:130px;
+	margin-left: 10px;
+}
+.form_all {
+	margin-left: 5px;
+}
