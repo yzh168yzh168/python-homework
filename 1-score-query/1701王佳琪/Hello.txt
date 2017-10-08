@@ -1,0 +1,2 @@
+print("Hello! World")
+# -*- coding: UTF-8 -*-如何自主学习
