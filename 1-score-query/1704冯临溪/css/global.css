@@ -1,0 +1,18 @@
+@charset "utf-8";
+/*body,div,a,input,form,dl,dt,dd,h1,label{
+	margin:0;
+	padding:0;
+} */
+a{
+	text-decoration: none;
+	color: black;
+}
+ul,li{
+	list-style: none;
+}
+form{
+	padding: 3dp;
+	height: 60px;
+	width: 50dp;
+	align-self: center;
+}
